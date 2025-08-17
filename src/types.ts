@@ -30,15 +30,22 @@ export type LiveClientOptions = GoogleGenAIOptions & { apiKey: string };
 export type StreamingLog = {
   date: Date;
   type: string;
-  count?: number;
   message:
     | string
     | ClientContentLog
     | Omit<LiveServerMessage, "text" | "data">
     | LiveClientToolResponse;
+  count?: number;
 };
 
 export type ClientContentLog = {
   turns: Part[];
   turnComplete: boolean;
 };
+
+// Extend the LiveConnectConfig to include our custom heartbeat setting
+declare module "@google/genai" {
+  interface LiveConnectConfig {
+    heartbeatInterval?: number;
+  }
+}

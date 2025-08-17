@@ -33,7 +33,7 @@
       opacity: 0.85;
     }
     z-index: 1;
-    
+
     position: absolute;
     top: 0;
     left: 0;
@@ -94,8 +94,26 @@
 
   .mode-selectors {
     display: flex;
-    gap: 1rem;
-    padding: 8px 0;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .heartbeat-settings {
+    margin-bottom: 16px;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+
+      input {
+        width: 60px;
+        padding: 4px 8px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+      }
+    }
   }
 
   textarea.system {
@@ -116,7 +134,7 @@
     resize: vertical;
     box-sizing: border-box;
     transition: all 0.2s ease;
-    
+
     &:focus {
       border-color: var(--accent-blue);
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);

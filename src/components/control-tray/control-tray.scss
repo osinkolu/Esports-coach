@@ -34,7 +34,7 @@
     pointer-events: none;
   }
 
-  &:hover {
+  &:hover:not(.disabled) {
     background: rgba(59, 130, 246, 0.2);
     border: 1px solid rgba(59, 130, 246, 0.4);
     transform: translateY(-2px);
@@ -49,6 +49,12 @@
     &:hover {
       border: 1px solid var(--Blue-500);
     }
+  }
+  
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: var(--grey-500);
   }
 }
 

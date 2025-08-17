@@ -114,6 +114,25 @@ export default function SettingsDialog() {
             <VoiceSelector />
           </div>
 
+          <h3>Heartbeat Settings</h3>
+          <div className="heartbeat-settings">
+            <label htmlFor="heartbeat-interval">
+              Heartbeat Interval (seconds): {config.heartbeatInterval || 15}
+            </label>
+            <input
+              id="heartbeat-interval"
+              type="range"
+              min="10"
+              max="45"
+              step="5"
+              value={config.heartbeatInterval || 15}
+              onChange={(e) => setConfig({
+                ...config,
+                heartbeatInterval: parseInt(e.target.value) || 15
+              })}
+            />
+          </div>
+
           <h3>System Instructions</h3>
           <textarea
             className="system"
